@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stick Pony Race — Fire Horse 2026</title>
+<style>
+  :root {
+    --red: #C41E3A;
+    --gold: #C9A84C;
+    --gold-deep: #8B6914;
+    --black: #111111;
+    --cream: #FBF5E8;
+    --text: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 32px 16px 28px;
+    border-bottom: 3px double var(--gold);
+    margin-bottom: 36px;
+  }
+  .brand {
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-weight: bold;
+  }
+  h1 {
+    font-size: clamp(34px, 7vw, 52px);
+    color: var(--red);
+    line-height: 1.05;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .tagline {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 17px;
+    letter-spacing: 0.12em;
+  }
+
+  /* Hero CTA — first thing on the page */
+  .hero-cta {
+    background: var(--black);
+    color: #fff;
+    padding: 32px 28px;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    border: 2px solid var(--gold);
+  }
+  .hero-cta h2 {
+    color: var(--gold);
+    font-size: 22px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 0;
+  }
+  .hero-cta p {
+    color: #f5f5f5;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .cta {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 44px;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: 2px solid var(--red);
+    transition: all 0.2s;
+  }
+  .cta:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+  }
+  .deadline {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+  }
+
+  /* Sections */
+  section {
+    background: #fff;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 4px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  h2 {
+    font-size: 26px;
+    color: var(--red);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  h3 {
+    font-size: 16px;
+    color: var(--black);
+    margin: 22px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  p { margin-bottom: 14px; }
+  ul { margin: 10px 0 14px 22px; }
+  li { margin-bottom: 6px; }
+
+  /* The format — visual cards */
+  .format-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0 10px;
+  }
+  .format-card {
+    background: var(--cream);
+    border-left: 3px solid var(--red);
+    padding: 14px 16px;
+  }
+  .format-card .label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .format-card .value {
+    font-size: 17px;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  /* Map */
+  .map-wrap {
+    margin: 20px 0 8px;
+    text-align: center;
+  }
+  .map-wrap img {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--gold);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .map-caption {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* Timeline */
+  .timeline {
+    margin-top: 14px;
+  }
+  .tl-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(201, 168, 76, 0.3);
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-time {
+    flex: 0 0 90px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  .tl-text {
+    flex: 1;
+    padding-top: 2px;
+  }
+
+  /* Team name inspiration — fun visual */
+  .name-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 16px 0 8px;
+  }
+  .name-tag {
+    background: var(--cream);
+    color: var(--gold-deep);
+    padding: 10px 14px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+  }
+
+  /* Callout */
+  .callout {
+    background: var(--cream);
+    border-left: 4px solid var(--red);
+    padding: 16px 20px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .callout strong { color: var(--red); }
+
+  /* Soft tease */
+  .tease {
+    text-align: center;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(196,30,58,0.05));
+    border: 1px dashed var(--gold);
+    border-radius: 4px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--gold-deep);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(201, 168, 76, 0.5);
+    color: var(--gold-deep);
+    font-size: 14px;
+  }
+  footer a {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 20px 14px 60px; }
+    section { padding: 22px 18px; }
+    .format-row { grid-template-columns: 1fr; }
+    .tl-item { flex-direction: column; gap: 6px; }
+    .tl-time { flex: none; align-self: flex-start; }
+    .hero-cta { padding: 24px 18px; }
+    .cta { padding: 14px 28px; font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">Fire Horse 2026 · Derby Day</div>
+    <h1>The Stick Pony Race</h1>
+    <div class="tagline">Wild · Fierce · Free</div>
+  </header>
+
+  <!-- HERO CTA — registration first -->
+  <div class="hero-cta">
+    <h2>Saddle Up</h2>
+    <p>Nine ponies. Eighteen riders. One champion. Get your team in before the bracket fills.</p>
+    <a href="https://forms.gle/pEG2TFEih94yxwj36" class="cta" target="_blank" rel="noopener">Register Your Team</a>
+    <div class="deadline">Registration closes Thursday April 30 · 8 PM<br>(or whenever 9 teams fill — whichever comes first)</div>
+  </div>
+
+  <!-- WHAT IT IS -->
+  <section>
+    <h2>What You're Signing Up For</h2>
+    <p>The centerpiece silly moment of Derby Day. Two-person teams race a decorated stick pony around a 390-foot loop on Riverside Ave — <strong>one rider</strong> galloping the pony, <strong>one coconut clapper</strong> providing authentic Monty Python hoofbeat sounds. Costumes encouraged. Dignity optional.</p>
+
+    <div class="format-row">
+      <div class="format-card">
+        <div class="label">Teams</div>
+        <div class="value">9 ponies, 2 humans each</div>
+      </div>
+      <div class="format-card">
+        <div class="label">Format</div>
+        <div class="value">3 heats, then a final</div>
+      </div>
+      <div class="format-card">
+        <div class="label">Course</div>
+        <div class="value">~390 ft loop</div>
+      </div>
+      <div class="format-card">
+        <div class="label">Decoration</div>
+        <div class="value">Day-of, by your team</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE COURSE -->
+  <section>
+    <h2>The Course</h2>
+    <p>Start at <strong>Three Finger Jack's</strong>, run up Riverside Ave, cross the street, and gallop back to Jack's. Spectators watch from the pub patio and along the sidewalk — front row seats to both the start and the finish.</p>
+
+    <div class="map-wrap">
+      <img src="course-map.jpg" alt="Stick Pony Race Course Map — 390ft loop on Riverside Ave, Winthrop WA" />
+      <p class="map-caption">390-foot loop · start and finish at Three Finger Jack's</p>
+    </div>
+  </section>
+
+  <!-- TIMING -->
+  <section>
+    <h2>Race Day Timing</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">1:30 PM</div>
+        <div class="tl-text"><strong>Team check-in</strong> at Three Finger Jack's. Pick up your pony, start decorating.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:15 PM</div>
+        <div class="tl-text"><strong>Calcutta Auction</strong> begins — guests bid on their favorite ponies.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">2:55 PM</div>
+        <div class="tl-text"><strong>Heats start.</strong> Three prelim heats, then the final.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">~3:15 PM</div>
+        <div class="tl-text"><strong>Winners crowned</strong>, glory distributed, payouts made.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM NAME INSPIRATION -->
+  <section>
+    <h2>Name Your Pony</h2>
+    <p>Every team needs a pony name. Make it punny, make it wild, make it mythological, make it ridiculous. Your pony's name will be called by the auctioneer and shouted across Riverside Ave — make it a name worth shouting.</p>
+
+    <h3>Some shameless inspiration</h3>
+    <div class="name-grid">
+      <div class="name-tag">Glitter Hooves</div>
+      <div class="name-tag">Sir Trots-a-Lot</div>
+      <div class="name-tag">Apocalypse Pony</div>
+      <div class="name-tag">Disco Inferno</div>
+      <div class="name-tag">Methow Mayhem</div>
+      <div class="name-tag">Hoof Hearted</div>
+      <div class="name-tag">Mane Event</div>
+      <div class="name-tag">Cantering Crisis</div>
+      <div class="name-tag">Pony Soprano</div>
+      <div class="name-tag">Saddle Up Sally</div>
+      <div class="name-tag">Stick Lightning</div>
+      <div class="name-tag">Coconut Express</div>
+    </div>
+
+    <div class="callout">
+      <strong>Pro tip:</strong> the name and decoration go together. "Disco Inferno" wants sequins and gold. "Apocalypse Pony" wants war paint. Lean in.
+    </div>
+  </section>
+
+  <!-- QUICK QUESTIONS -->
+  <section>
+    <h2>Quick Questions</h2>
+
+    <h3>Do I need my own stick pony?</h3>
+    <p>No — we supply the ponies. You supply the team and the enthusiasm. Bring decorations if you want to go all-out.</p>
+
+    <h3>What if I can't find a coconut clapper?</h3>
+    <p>Sign up anyway and note their name as TBD. There are always extras at parties like this who love a good silly moment — we'll help pair you up.</p>
+
+    <h3>Are kids allowed to race?</h3>
+    <p>Bring 'em on. Just confirm with Abbey if you want to sign up a youth team.</p>
+
+    <h3>What about prizes?</h3>
+    <p>Yes — there's prize money for the top three teams. Details will be shared with registered teams in the days leading up to the event.</p>
+
+    <h3>Costume requirements?</h3>
+    <p>None. But — this is a Kentucky Derby / Year of the Fire Horse 60th birthday party at a pub in Winthrop. Read the room.</p>
+  </section>
+
+  <!-- TEASE FOR BETTING -->
+  <div class="tease">
+    Betting details (Calcutta auction + Derby raffle) coming soon — registered pony teams will be the first to know.
+  </div>
+
+  <footer>
+    <p><a href="index.html">← Back to Fire Horse 2026</a></p>
+    <p style="margin-top: 12px;">Questions? Text Abbey at 206-713-1720 or email abbeylinh@gmail.com</p>
+    <p style="margin-top: 12px;">May 1–3, 2026 · Winthrop, Washington</p>
+  </footer>
+
+</div>
+</body>
+</html>
