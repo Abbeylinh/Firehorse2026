@@ -65,6 +65,8 @@
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-family: "Bebas Neue", sans-serif; font-size: 0.75rem; letter-spacing: 0.25em; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
+  .nav-links a.nav-highlight { color: var(--gold); }
+  .nav-links a.nav-highlight:hover { color: var(--red); }
 
   /* HERO — SPLIT LAYOUT */
   .hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; overflow: hidden; }
@@ -145,6 +147,19 @@
   .event-time-line { font-family: "Bebas Neue", sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--text-muted); }
   .event-time-line span { color: var(--gold); }
 
+  /* PONY RACE CARD — special treatment for the registration CTA */
+  .event-card.pony-race { border-color: rgba(196,30,58,0.5); box-shadow: 0 0 30px rgba(196,30,58,0.1); }
+  .event-card.pony-race:hover { border-color: var(--red); box-shadow: 0 0 40px rgba(196,30,58,0.25); }
+  .event-card.pony-race .event-day-badge { background: var(--gold); color: var(--dark); }
+  .event-card.pony-race .pony-cta {
+    display: inline-block; background: var(--red); color: var(--cream);
+    padding: 0.85rem 2rem; font-family: "Bebas Neue", sans-serif;
+    font-size: 1rem; letter-spacing: 0.25em; text-decoration: none;
+    transition: background 0.3s; align-self: flex-start;
+  }
+  .event-card.pony-race .pony-cta:hover { background: var(--deep-red); }
+  .event-card.pony-race .event-card-img img { filter: brightness(0.95); }
+
   /* DERBY FEATURES */
   .derby-features { max-width: 1100px; margin: 0 auto 3rem; padding: 0 1.5rem; }
   .derby-features-inner { background: var(--charcoal); border: 1px solid rgba(196,30,58,0.3); padding: 3rem 2rem; }
@@ -210,6 +225,8 @@
   .faq-item:last-child { border-bottom: none; }
   .faq-q { font-family: "Playfair Display", serif; font-size: 1.1rem; color: var(--gold-light); margin-bottom: 0.6rem; font-weight: 600; }
   .faq-a { font-family: "Cormorant Garamond", serif; font-size: 1rem; line-height: 1.7; color: var(--text-muted); font-weight: 300; }
+  .faq-a a { color: var(--gold); text-decoration: none; }
+  .faq-a a:hover { text-decoration: underline; }
 
   /* FOOTER */
   footer { background: var(--dark); border-top: 1px solid rgba(201,168,76,0.12); padding: 3rem 2rem; text-align: center; }
@@ -257,10 +274,11 @@
   <img src="images/logo.png" alt="Fire Horse 2026" class="nav-logo">
   <ul class="nav-links">
     <li><a href="#events">Events</a></li>
+    <li><a href="pony-race.html" class="nav-highlight">🐴 Pony Race</a></li>
     <li><a href="#attire">What to Wear</a></li>
     <li><a href="#logistics">Getting There</a></li>
     <li><a href="#rsvp">RSVP</a></li>
-    <li><<a href="https://photos.app.goo.gl/ZDVfx1dn4KmQ67zb6" target="_blank" rel="noopener">GALLERY</a>
+    <li><a href="https://photos.app.goo.gl/ZDVfx1dn4KmQ67zb6" target="_blank" rel="noopener">Gallery</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
 </nav>
@@ -343,6 +361,29 @@
       <p class="event-time-line">⏰ <span>1:00 PM — 5:00 PM</span></p>
     </div>
   </div>
+
+  <!-- PONY RACE REGISTRATION CARD -->
+  <div class="event-card pony-race reveal" id="pony-race-card">
+    <div class="event-card-img">
+      <img src="course-map.jpg" alt="Stick Pony Race Course Map — 390ft loop on Riverside Ave">
+      <div class="event-card-img-overlay"></div>
+      <span class="event-day-badge">🐴 Sign Up Now</span>
+    </div>
+    <div class="event-card-body">
+      <h3 class="event-title">Stick Pony Race — Register Your Team</h3>
+      <p class="event-venue">📍 Riverside Ave · 390-foot loop · Saturday Derby Day</p>
+      <p class="event-desc">The centerpiece silly moment of Derby Day. Two-person teams race a decorated stick pony — one rider galloping, one coconut clapper providing authentic Monty Python hoofbeats. Nine ponies, three heats, one champion. Costumes encouraged. Dignity optional.</p>
+      <div class="event-tags">
+        <span class="tag">🐴 9 Pony Teams</span>
+        <span class="tag">🥥 Coconut Clappers</span>
+        <span class="tag">🏆 Prize Money</span>
+        <span class="tag">⏳ Closes April 30</span>
+      </div>
+      <p class="event-time-line" style="margin-bottom: 1.4rem;">⏰ Check-in <span>1:30 PM</span> &nbsp;·&nbsp; Heats <span>2:55 PM</span></p>
+      <a href="pony-race.html" class="pony-cta">Register Your Team →</a>
+    </div>
+  </div>
+
   <div class="event-card mountain reveal">
     <div class="event-card-img">
       <img src="images/mountain.jpg" alt="Patterson Mountain Methow Valley">
@@ -448,6 +489,7 @@
     <div class="faq-item reveal"><p class="faq-q">Is there a cost to attend?</p><p class="faq-a">No — all three events are hosted. Food and drinks provided at Derby Day. Snacks at Disco Night (BYOB for drinks). Bring yourself, your outfit, and something to share at the Sunday picnic.</p></div>
     <div class="faq-item reveal"><p class="faq-q">Do I have to come to all three days?</p><p class="faq-a">Not at all — come to whatever works. Derby Day on Saturday is the main event if you can only make one. The full trifecta is the intended experience though.</p></div>
     <div class="faq-item reveal"><p class="faq-q">Is the hat on Derby Day really required?</p><p class="faq-a">Required is a strong word. Strongly encouraged is an understatement. There is a Best Hat Contest with prizes. This is Kentucky Derby — the hat is the thing. Please bring a hat.</p></div>
+    <div class="faq-item reveal"><p class="faq-q">How do I register for the Stick Pony Race?</p><p class="faq-a">Visit the <a href="pony-race.html">Pony Race page</a> for details and registration. You'll need a team of two — one rider and one coconut clapper. Registration closes Thursday April 30 at 8 PM, or whenever 9 teams fill, whichever comes first.</p></div>
     <div class="faq-item reveal"><p class="faq-q">What time does the actual Kentucky Derby run?</p><p class="faq-a">Post time is 3:57 PM Pacific Time on Saturday May 2nd. We'll be watching it live at Three Finger Jack's. Be there well before 3:57 — the post parade and My Old Kentucky Home are part of the experience.</p></div>
     <div class="faq-item reveal"><p class="faq-q">What should I bring to the Sunday hike?</p><p class="faq-a">Comfortable hiking shoes, layers for the summit, sunscreen, water, and something to share for the picnic. Moderate difficulty — take your time and enjoy the views.</p></div>
     <div class="faq-item reveal"><p class="faq-q">I have dietary restrictions — will there be options?</p><p class="faq-a">The Derby Day feast is a full Southern spread with plenty of variety. Mention restrictions in your RSVP and we'll take care of you.</p></div>
