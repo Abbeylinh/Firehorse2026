@@ -22,7 +22,6 @@
   }
   .wrap { max-width: 760px; margin: 0 auto; padding: 32px 24px 80px; }
 
-  /* Header */
   header {
     text-align: center;
     padding: 32px 16px 28px;
@@ -51,7 +50,6 @@
     letter-spacing: 0.12em;
   }
 
-  /* Hero CTA — first thing on the page */
   .hero-cta {
     background: var(--black);
     color: #fff;
@@ -99,7 +97,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* Sections */
   section {
     background: #fff;
     border: 1px solid rgba(201, 168, 76, 0.3);
@@ -126,7 +123,6 @@
   ul { margin: 10px 0 14px 22px; }
   li { margin-bottom: 6px; }
 
-  /* The format — visual cards */
   .format-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -152,7 +148,6 @@
     font-weight: bold;
   }
 
-  /* Map */
   .map-wrap {
     margin: 20px 0 8px;
     text-align: center;
@@ -171,7 +166,6 @@
     margin-top: 10px;
   }
 
-  /* Timeline */
   .timeline {
     margin-top: 14px;
   }
@@ -199,7 +193,6 @@
     padding-top: 2px;
   }
 
-  /* Team name inspiration — fun visual */
   .name-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -217,47 +210,6 @@
     border: 1px solid rgba(201, 168, 76, 0.4);
   }
 
-  /* Field So Far — registered + open spots */
-  .field-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 10px;
-    margin: 16px 0 8px;
-  }
-  .field-tag {
-    padding: 12px 14px;
-    border-radius: 3px;
-    font-size: 15px;
-    text-align: center;
-    transition: transform 0.15s;
-  }
-  .field-tag.filled {
-    background: #fff;
-    color: var(--black);
-    font-weight: bold;
-    border: 2px solid var(--red);
-    box-shadow: 0 2px 6px rgba(196,30,58,0.15);
-  }
-  .field-tag.open {
-    background: rgba(201, 168, 76, 0.05);
-    color: rgba(139, 105, 20, 0.55);
-    font-style: italic;
-    border: 1px dashed rgba(201, 168, 76, 0.5);
-  }
-  .field-counter {
-    text-align: center;
-    margin-top: 18px;
-    font-size: 16px;
-    font-style: italic;
-    color: var(--gold-deep);
-  }
-  .field-counter strong {
-    color: var(--red);
-    font-style: normal;
-    font-weight: bold;
-  }
-
-  /* Callout */
   .callout {
     background: var(--cream);
     border-left: 4px solid var(--red);
@@ -267,7 +219,42 @@
   }
   .callout strong { color: var(--red); }
 
-  /* Soft tease */
+  .rules-list {
+    background: var(--cream);
+    padding: 18px 20px 18px 40px;
+    border-left: 4px solid var(--gold);
+    margin: 16px 0;
+  }
+  .rules-list li {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .scoring-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin: 14px 0 6px;
+  }
+  .scoring-card {
+    background: var(--cream);
+    padding: 14px;
+    text-align: center;
+    border: 1px solid rgba(201, 168, 76, 0.4);
+    border-radius: 3px;
+  }
+  .scoring-card .icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  .scoring-card .label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--gold-deep);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
   .tease {
     text-align: center;
     padding: 18px;
@@ -276,11 +263,15 @@
     border-radius: 4px;
     margin-top: 8px;
     font-size: 14px;
-    font-style: italic;
     color: var(--gold-deep);
   }
+  .tease a {
+    color: var(--red);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .tease a:hover { text-decoration: underline; }
 
-  /* Footer */
   footer {
     text-align: center;
     margin-top: 36px;
@@ -316,42 +307,16 @@
     <div class="tagline">Wild · Fierce · Free</div>
   </header>
 
-  <!-- HERO CTA — registration first -->
   <div class="hero-cta">
     <h2>Saddle Up</h2>
     <p>Nine ponies. Eighteen riders. One champion. Get your team in before the bracket fills.</p>
     <a href="https://forms.gle/pEG2TFEih94yxwj36" class="cta" target="_blank" rel="noopener">Register Your Team</a>
-    <div class="deadline">Registration closes Thursday April 30 · 8 PM<br>(or whenever 9 teams fill — whichever comes first)</div>
+    <div class="deadline">Registration closes Thursday April 30 · 8 PM<br>(or whenever 9 teams fill — whichever comes first)<br><span style="color:#fff;opacity:0.85;">Walk-up registration available Saturday until 1:30 PM if spots remain</span></div>
   </div>
 
-  <!-- THE FIELD SO FAR -->
-  <section>
-    <h2>The Field So Far</h2>
-    <p>Five ponies in the bracket. Four spots open. Here's who's racing.</p>
-
-    <div class="field-grid">
-      <div class="field-tag filled">FireHorse Fury</div>
-      <div class="field-tag filled">The Wave</div>
-      <div class="field-tag filled">Spring Beauty</div>
-      <div class="field-tag filled">Saddle Sore</div>
-      <div class="field-tag filled">Benji</div>
-      <div class="field-tag open">Open spot</div>
-      <div class="field-tag open">Open spot</div>
-      <div class="field-tag open">Open spot</div>
-      <div class="field-tag open">Open spot</div>
-    </div>
-
-    <p class="field-counter"><strong>5 of 9 teams</strong> registered &nbsp;·&nbsp; <strong>4 spots</strong> still up for grabs</p>
-
-    <div class="callout">
-      <strong>The bracket fills first-come, first-served.</strong> Once 9 teams are in, registration closes regardless of the deadline. If you've been sitting on the fence, this is your sign.
-    </div>
-  </section>
-
-  <!-- WHAT IT IS -->
   <section>
     <h2>What You're Signing Up For</h2>
-    <p>The centerpiece silly moment of Derby Day. Two-person teams race a stick pony around a 390-foot loop on Riverside Ave — <strong>one rider</strong> galloping the pony, <strong>one coconut clapper</strong> providing authentic Monty Python hoofbeat sounds. The clapper stays <strong>within 3 feet</strong> of the rider for the entire race — chaos and glory in equal measure. Costumes encouraged. Dignity optional.</p>
+    <p>The centerpiece silly moment of Derby Day. Two-person teams race a stick pony around a 390-foot loop on Riverside Ave — <strong>one rider</strong> galloping the pony in front, <strong>one coconut clapper</strong> following close behind providing authentic Monty Python hoofbeat sounds. Costumes encouraged. Dignity optional.</p>
 
     <div class="format-row">
       <div class="format-card">
@@ -373,7 +338,6 @@
     </div>
   </section>
 
-  <!-- THE COURSE -->
   <section>
     <h2>The Course</h2>
     <p>Start at <strong>Three Finger Jack's</strong>, run up Riverside Ave, cross the street, and gallop back to Jack's. Spectators watch from the pub patio and along the sidewalk — front row seats to both the start and the finish.</p>
@@ -384,17 +348,56 @@
     </div>
   </section>
 
-  <!-- TIMING -->
+  <section>
+    <h2>The Rules</h2>
+
+    <h3>Team Formation</h3>
+    <ul class="rules-list">
+      <li><strong>Rider in front, clapper behind</strong> — every team, every heat.</li>
+      <li><strong>Stay within 3 feet</strong> of each other for the entire race. The clapper must keep within 3 feet of the rider — fall behind and your team earns demerits in the scoring.</li>
+    </ul>
+
+    <h3>Race Conduct</h3>
+    <ul class="rules-list">
+      <li><strong>No regular running</strong> — this is a stick pony gallop, not a sprint. Move like you mean it, but stay in character.</li>
+      <li><strong>No blocking or checking</strong> other teams.</li>
+      <li><strong>No cutting corners</strong> — stay on the marked course.</li>
+      <li><strong>Spotters are watching</strong> for the 3-foot rule, lane breaks, false starts, and corner cutting. Each heat has its own spotter.</li>
+    </ul>
+
+    <h3>How Winners Are Scored</h3>
+    <p>Scoring isn't just about who crosses the finish line first. Four factors decide your placement:</p>
+    <div class="scoring-grid">
+      <div class="scoring-card">
+        <div class="icon">⏱️</div>
+        <div class="label">Time</div>
+      </div>
+      <div class="scoring-card">
+        <div class="icon">✨</div>
+        <div class="label">Best in Show</div>
+      </div>
+      <div class="scoring-card">
+        <div class="icon">🤝</div>
+        <div class="label">Teamwork</div>
+      </div>
+      <div class="scoring-card">
+        <div class="icon">🌹</div>
+        <div class="label">Sportsmanship</div>
+      </div>
+    </div>
+    <p style="font-size:14px;font-style:italic;color:#888;margin-top:8px;">Translation: be fast, look ridiculous, stay together, and don't be a jerk.</p>
+  </section>
+
   <section>
     <h2>Race Day Timing</h2>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-time">12:00 PM</div>
-        <div class="tl-text"><strong>Pony team sign-in</strong> opens at Three Finger Jack's. Pick up your jockey hat, bib, and coconuts. Get in costume.</div>
+        <div class="tl-text"><strong>Pony team sign-in</strong> opens at Three Finger Jack's. Pick up your packet — pony number, jockey hat, bib, and coconuts.</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">1:30 PM</div>
-        <div class="tl-text"><strong>Sign-in closes.</strong> All teams must be checked in.</div>
+        <div class="tl-text"><strong>Sign-in closes.</strong> All teams must be checked in. Last call for walk-ups if spots remain.</div>
       </div>
       <div class="tl-item">
         <div class="tl-time">1:45 PM</div>
@@ -411,7 +414,6 @@
     </div>
   </section>
 
-  <!-- TEAM NAME INSPIRATION -->
   <section>
     <h2>Name Your Pony</h2>
     <p>Every team needs a pony name. Make it punny, make it wild, make it mythological, make it ridiculous. Your pony's name will be called by the auctioneer and shouted across Riverside Ave — make it a name worth shouting.</p>
@@ -433,16 +435,15 @@
     </div>
 
     <div class="callout">
-      <strong>Pro tip:</strong> the name and your team costume go together. "Disco Inferno" wants sequins and gold. "Apocalypse Pony" wants war paint. Lean in — the people get decorated, that's where Best Pony judging will land.
+      <strong>Pro tip:</strong> the name and your team's outfits go together. "Disco Inferno" wants sequins and gold. "Apocalypse Pony" wants war paint. Lean in.
     </div>
   </section>
 
-  <!-- QUICK QUESTIONS -->
   <section>
     <h2>Quick Questions</h2>
 
     <h3>Do I need my own stick pony?</h3>
-    <p>No — we supply the ponies, jockey hats, bibs, and coconuts. You supply the team and the enthusiasm. Bring your team costume game — that's where Best Pony judging lands.</p>
+    <p>No — we supply the ponies, jockey hats, bibs, and coconuts. You supply the team and the enthusiasm.</p>
 
     <h3>What if I can't find a coconut clapper?</h3>
     <p>Sign up anyway and note their name as TBD. There are always extras at parties like this who love a good silly moment — we'll help pair you up.</p>
@@ -454,9 +455,8 @@
     <p>None. But — this is a Kentucky Derby / Year of the Fire Horse 60th birthday party at a pub in Winthrop. Read the room.</p>
   </section>
 
-  <!-- TEASE FOR BETTING -->
   <div class="tease">
-    Betting details (Calcutta auction + Derby raffle) coming soon — registered pony teams will be the first to know.
+    Want to bet on the race? <a href="betting.html">Check out the three Derby Day betting games →</a>
   </div>
 
   <footer>
